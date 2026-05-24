@@ -5,4 +5,4 @@ Four distinct HTML5 documents that function separately to divide operational flo
 * **User Data Form & Profile Generator (`register.html`):** A layered form design process built to collect baseline user identity information, physiological profiles, detailed activity levels using drop-down menus, and extensive medical history and allergy data.
 * **Analytics & Recommendations Portal (`recommendations.html`):** Dense results-based dashboard with hidden matrix tables for generating individualized dietary suggestions, comprehensive calorie breakdowns, layout-based profile editing capabilities, and form-based user feedback submissions.
 * **Administrator Control Desk (`admin.html`):** Responsive administrative control desk designed exclusively using isolated data tables (`.table-container`). This page contains dual-layered monitoring panels for tracking users.
-* **script.js and Style.css** :** These are javascript and CSS files for html pages layout enhancement and responsiveness.
+* **script.js and Style.css** : These are javascript and CSS files for html pages layout enhancement and responsiveness.
