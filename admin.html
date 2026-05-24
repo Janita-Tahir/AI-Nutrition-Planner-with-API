@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - NutriPlan</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">NutriPlan</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="register.html">Register</a>
+      <a href="recommendations.html">Recommendations</a>
+      <a href="admin.html">Admin</a>
+    </div>
+  </div>
+</nav>
+
+    <section class="section reveal">
+        <h2>User Management</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                        <th>Meal History</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ali Khan</td>
+                        <td>ali@email.com</td>
+                        <td><span class="badge active">Active</span></td>
+                        <td>
+                            <button onclick="toggleUser(this)">Deactivate</button>
+                        </td>
+                        <td><button>View</button></td>
+                    </tr>
+                    <tr>
+                        <td>Ayesha Noor</td>
+                        <td>ayesha@email.com</td>
+                        <td><span class="badge inactive">Inactive</span></td>
+                        <td>
+                            <button onclick="toggleUser(this)">Activate</button>
+                        </td>
+                        <td><button>View</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="section alt reveal">
+        <h2>AI Recommendation Monitoring (FR-A3)</h2>
+        <p>Review and validate AI-generated plans before they are finalized.</p>
+        
+        <div class="table-container">
+            <table id="aiMonitoringTable">
+                <thead>
+                    <tr>
+                        <th>User</th>
+                        <th>AI Recommendation</th>
+                        <th>Generated Date</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ali Khan</td>
+                        <td>"High protein, low carb plan based on 2500kcal target."</td>
+                        <td>2023-10-24</td>
+                        <td><span class="badge pending">Pending Review</span></td>
+                        <td>
+                            <button class="btn-verify" onclick="validateAI(this, 'verify')">Verify</button>
+                            <button class="btn-flag" onclick="validateAI(this, 'flag')">Flag</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ayesha Noor</td>
+                        <td>"Vegan Mediterranean diet, focus on Vitamin B12."</td>
+                        <td>2023-10-23</td>
+                        <td><span class="badge verified">Verified</span></td>
+                        <td>
+                            <button disabled>Validated</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 NutriPlan Admin Portal</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

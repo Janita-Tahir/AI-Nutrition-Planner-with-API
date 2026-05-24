@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NutriPlan</title>
+
+<link rel="stylesheet" href="styles.css">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<!-- IMPORTANT for alternating colors -->
+<body class="home">
+  <nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">NutriPlan</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="register.html">Register</a>
+      <a href="recommendations.html">Recommendations</a>
+      <a href="admin.html">Admin</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content reveal">
+
+    <h1>NutriPlan</h1>
+    <p class="tagline">Your health, curated.</p>
+    <p class="subtext">Smart meal planning for a healthier lifestyle.</p>
+
+    <button onclick="scrollToLogin()">Start Your Journey</button>
+
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section reveal">
+  <h2>What We Offer</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>✔ Personalized Meal Plans</h3>
+      <p>Meals tailored to your body and goals.</p>
+    </div>
+
+    <div class="card">
+      <h3>✔ Nutrition Tracking</h3>
+      <p>Monitor calories, macros, and nutrients easily.</p>
+    </div>
+
+    <div class="card">
+      <h3>✔ Health Analytics</h3>
+      <p>Understand your progress with clear insights.</p>
+    </div>
+
+    <div class="card">
+      <h3>✔ AI Recommendations</h3>
+      <p>Smart suggestions to improve your diet.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- 3 STEP SYSTEM -->
+<section class="section reveal">
+  <h2>Simple 3-Step System</h2>
+
+  <div class="grid">
+
+    <div class="card step-card">
+      <h3>1. Register</h3>
+      <p>Enter your personal health data</p>
+    </div>
+
+    <div class="card step-card">
+      <h3>2. Track</h3>
+      <p>Log meals and monitor nutrients</p>
+    </div>
+
+    <div class="card step-card">
+      <h3>3. Improve</h3>
+      <p>Get insights & optimize your diet</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="section reveal">
+  <h2>Our Philosophy</h2>
+
+  <p class="center-text">
+    NutriPlan is built on the idea that health should be simple, not overwhelming.
+    We combine data and smart technology to help you make better daily decisions.
+  </p>
+
+  <div class="grid small-grid">
+    <div class="pill">✔ Personalized for every user</div>
+    <div class="pill">✔ Simple & easy to follow</div>
+    <div class="pill">✔ Science-based nutrition</div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section reveal">
+  <h2>What Our Users Say</h2>
+
+  <div class="grid">
+
+    <div class="card testimonial">
+      <p>"NutriPlan helped me finally stay consistent with my diet!"</p>
+      <span>- Ayesha</span>
+    </div>
+
+    <div class="card testimonial">
+      <p>"The tracking and recommendations are incredibly useful."</p>
+      <span>- Ali</span>
+    </div>
+
+    <div class="card testimonial">
+      <p>"Simple, clean, and actually works."</p>
+      <span>- Hassan</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- LOGIN -->
+<section id="login" class="section reveal">
+  <h2>Login</h2>
+
+  <form class="form" onsubmit="handleLogin(event)">
+    <input type="email" placeholder="Email" required>
+    <input type="password" placeholder="Password" required>
+
+    <button type="submit">Login</button>
+  </form>
+
+  <p>
+    Not registered yet?
+    <a href="register.html">Register</a>
+  </p>
+</section>
+
+<!-- CONTACT -->
+<section class="section reveal">
+  <h2>Let's Connect</h2>
+
+  <form class="form">
+    <input placeholder="Name">
+    <input placeholder="Email">
+    <textarea placeholder="Message"></textarea>
+
+    <button>Submit</button>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <h3>NutriPlan</h3>
+  <p>Email: support@nutriplan.com</p>
+  <p>Phone: +92 XXX XXX XXXX</p>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  lucide.createIcons();
+</script>
+
+</body>
+</html>

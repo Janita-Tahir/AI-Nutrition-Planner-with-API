@@ -1,0 +1,298 @@
+/* =========================
+   COLOR SYSTEM & VARIABLES
+========================= */
+:root {
+  --beige: #f7f4d5;
+  --rosy: #d3968c;
+  --text: #3a2e2a;
+  --white: #ffffff;
+  --dark-bg: #2f2a28;
+}
+
+/* =========================
+   GLOBAL RESET
+========================= */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text);
+  line-height: 1.6;
+  background-color: var(--white);
+}
+
+/* =========================
+   NAVIGATION BAR
+========================= */
+.navbar {
+  background: var(--dark-bg);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.nav-logo {
+  color: var(--beige);
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.nav-links a {
+  color: var(--white);
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 400;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--rosy);
+}
+
+/* =========================
+   HOME PAGE ALTERNATING COLORS
+========================= */
+/* body class must be <body class="home"> for this to work */
+.home section.section:nth-of-type(odd) {
+  background: var(--rosy);
+}
+
+.home section.section:nth-of-type(even) {
+  background: var(--beige);
+}
+
+.home #login {
+  background: var(--beige) !important;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("./images/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero h1 {
+  font-size: 3.2rem;
+  color: white;
+  text-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  margin-bottom: 10px;
+}
+
+/* =========================
+   COMMON COMPONENTS
+========================= */
+.section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  width: 260px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.card:hover { transform: translateY(-5px); }
+
+/* =========================
+   FORMS & INPUTS
+========================= */
+.form { max-width: 450px; margin: auto; }
+
+input, textarea, select {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  background: #fffaf4;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+button {
+  background: var(--rosy);
+  color: white;
+  padding: 12px 28px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+button:hover { background: #b07a71; }
+
+/* =========================
+   TABLES (NUTRITION & ADMIN)
+========================= */
+.table-container {
+  overflow-x: auto;
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+table {
+  width: 100%;
+  background: white;
+  border-radius: 15px;
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+th, td { padding: 15px; border-bottom: 1px solid #eee; text-align: left; }
+th { background: #f1e1de; }
+
+/* =========================
+   RECOMMENDATIONS PAGE SPECIFICS
+========================= */
+#resultsSection {
+  display: none; /* Controlled by JS */
+  padding-bottom: 50px;
+}
+
+#resultsSection.active { display: block; }
+
+/* AI Meal Cards */
+#mealCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 30px auto;
+}
+
+/* Progress Circle Tracker */
+.tracker-wrapper {
+  background: var(--beige);
+  padding: 40px;
+  border-radius: 30px;
+  margin: 40px auto;
+  max-width: 400px;
+}
+
+.progress-circle {
+  width: 180px;
+  height: 180px;
+  border: 12px solid var(--rosy);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  background: var(--white);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.progress-circle span {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+/* Feedback Box */
+.feedback-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  border: 2px dashed var(--rosy);
+  border-radius: 25px;
+  background: #fffdfa;
+}
+
+/* =========================
+   BADGES & ANIMATIONS
+========================= */
+.badge { padding: 5px 10px; border-radius: 20px; font-size: 0.8rem; }
+.active-badge { background: #c8f7c5; }
+.inactive-badge { background: #f7c5c5; }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* =========================
+   FR-A3: ADMIN MONITORING STYLES
+========================= */
+
+/* Specific Badges for Monitoring */
+.badge.pending {
+  background: #fdfd96; /* Pastel Yellow */
+  color: #856404;
+}
+
+.badge.verified {
+  background: #c8f7c5; /* Pastel Green */
+  color: #155724;
+}
+
+.badge.flagged {
+  background: #f7c5c5; /* Pastel Red */
+  color: #721c24;
+}
+
+/* Action Buttons */
+.btn-verify {
+  background: #28a745 !important;
+  color: white;
+  margin-right: 5px;
+}
+
+.btn-flag {
+  background: #dc3545 !important;
+  color: white;
+}
+
+.btn-verify:hover { background: #218838 !important; }
+.btn-flag:hover { background: #c82333 !important; }
+
+/* Disabled button state */
+button:disabled {
+  background: #cccccc !important;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+/* =========================
+   FOOTER
+========================= */
+footer {
+  background: var(--dark-bg);
+  color: var(--beige);
+  text-align: center;
+  padding: 40px 20px;
+}

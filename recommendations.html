@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Recommendations - NutriPlan</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="home">
+    <nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">NutriPlan</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="register.html">Register</a>
+      <a href="recommendations.html">Recommendations</a>
+      <a href="admin.html">Admin</a>
+    </div>
+  </div>
+</nav>
+
+    <section class="section reveal active">
+        <h2>AI Meal Recommendation</h2>
+        <p>Start your day with a plan tailored by our AI.</p>
+        <button id="generateBtn" onclick="generateMealPlan()">✨ Generate My Plan</button>
+        
+        <div id="resultsSection" style="display: none; margin-top: 30px;">
+            <div class="grid" id="mealCards"></div>
+
+            <div class="table-container reveal active">
+                <h3>Nutritional Breakdown</h3>
+                <table>
+                    <tbody id="nutritionDetails"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="section reveal active">
+        <h2>Progress Tracking</h2>
+        <div class="progress-container">
+            <div class="progress-circle">
+                <span id="caloriesTracked">0</span> / 2000
+            </div>
+            <p>Calories Consumed Today</p>
+        </div>
+        
+        <div class="steps-box">
+            <form class="form" onsubmit="updateProgress(event)">
+                <input type="number" id="logKcal" placeholder="Enter Calories to Log" required>
+                <button type="submit">Log Intake</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="section reveal active">
+        <h2>Refine Your Plan</h2>
+        <div class="steps-box feedback-box">
+            <h4>Quick Feedback</h4>
+            <button onclick="adaptPlan('too_much')">Too Much Food</button>
+            <button onclick="adaptPlan('just_right')">Perfect</button>
+            <button onclick="adaptPlan('too_little')">Still Hungry</button>
+
+            <h4 style="margin-top: 25px;">Custom Requests</h4>
+            <p>Tell us in sentences what you want to change:</p>
+            <form class="form" onsubmit="handleCustomFeedback(event)">
+                <textarea id="customFeedback" placeholder="e.g. 'I want more vegetarian options' or 'Less carbs for dinner'"></textarea>
+                <button type="submit" style="background: var(--text);">Submit Request</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
